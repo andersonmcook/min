@@ -17,12 +17,12 @@ defmodule MinWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    get "/:hash", URLController, :show
+    get "/:hash", LinkController, :show
   end
 
   # Other scopes may use custom stacks.
   scope "/api", MinWeb do
     pipe_through :api
-    post "/url", URLController, :create
+    post "/links", LinkController, :create
   end
 end

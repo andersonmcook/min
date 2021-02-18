@@ -34,3 +34,20 @@
   display: block;
   margin: -1rem 0 2rem;
 }
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.title {
+  font-size: 10rem;
+}
+
+.button {
+  margin-left: 1rem;
+}

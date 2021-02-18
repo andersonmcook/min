@@ -1,13 +1,13 @@
-defmodule MinWeb.URLController do
+defmodule MinWeb.LinkController do
   use MinWeb, :controller
 
-  alias Min.URLs
+  alias Min.Links
   alias MinWeb.Endpoint
 
   def create(conn, %{"url" => url}) do
-    case URLs.create(url) do
+    case Links.create(url) do
       {:ok, %{hash: hash}} ->
-        url = Routes.url_path(Endpoint, :show, hash)
+        url = Routes.link_url(Endpoint, :show, hash)
         json(conn, %{url: url})
 
       {:error, _changeset} ->
@@ -18,7 +18,7 @@ defmodule MinWeb.URLController do
   end
 
   def show(conn, %{"hash" => hash}) do
-    case URLs.get(hash) do
+    case Links.get(hash) do
       nil -> redirect(conn, to: "/")
       %{url: url} -> redirect(conn, external: url)
     end

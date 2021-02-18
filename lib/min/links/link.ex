@@ -1,11 +1,11 @@
-defmodule Min.URLs.URL do
+defmodule Min.Links.Link do
   use Ecto.Schema
 
   import Ecto.Changeset
 
   @type t :: %__MODULE__{}
 
-  schema "urls" do
+  schema "links" do
     field :hash, :string
     field :url, EctoFields.URL
     timestamps()
