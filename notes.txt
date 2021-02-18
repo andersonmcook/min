@@ -1,0 +1,9 @@
+Install Docker
+https://www.docker.com/get-started
+
+Run tests
+`docker-compose run web mix test`
+
+Start app
+`docker-compose up`
+`open localhost:4000`

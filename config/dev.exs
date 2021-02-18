@@ -3,9 +3,9 @@ use Mix.Config
 # Configure your database
 config :min, Min.Repo,
   username: "postgres",
-  password: "postgres",
+  password: System.get_env("DB_PASS", "postgres"),
   database: "min_dev",
-  hostname: "localhost",
+  hostname: System.get_env("DB_HOST", "localhost"),
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
