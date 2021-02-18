@@ -1,8 +1,8 @@
 defmodule Min.Links do
   @moduledoc false
 
-  alias Min.Repo
   alias Min.Links.Link
+  alias Min.Repo
 
   # We could re-hash on collision
   @spec create(String.t()) :: {:ok, Link.t()} | {:error, Ecto.Changeset.t()}
