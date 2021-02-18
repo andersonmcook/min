@@ -4,7 +4,7 @@ import axios from "axios";
 const createURL = (url, onSuccess, onError) => (event) => {
   event.preventDefault();
   axios
-    .post("http://localhost:4000/api/links", { url: url })
+    .post(`${SERVER}api/links`, { url: url })
     .then((response) => {
       onError(null);
       onSuccess({ original: url, short: response.data.url });
@@ -44,7 +44,9 @@ export default function App() {
       {shortURL.original && (
         <div className="flex">
           <span>{shortURL.original}</span>
-          <a href={shortURL.short}>{shortURL.short}</a>
+          <a href={shortURL.short} rel="noopener noreferrer" target="__blank">
+            {shortURL.short}
+          </a>
         </div>
       )}
       {error && <p className="alert alert-danger">{error}</p>}

@@ -6,4 +6,4 @@ Run tests
 
 Start app
 `docker-compose up`
-`open localhost:4000`
+Visit localhost:4000
