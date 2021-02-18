@@ -42,7 +42,8 @@ export default function App() {
         </div>
       </form>
       {shortURL.original && (
-        <div className="flex">
+        <div className="flex alert alert-info">
+          <span>Link shortened!</span>
           <span>{shortURL.original}</span>
           <a href={shortURL.short} rel="noopener noreferrer" target="__blank">
             {shortURL.short}
